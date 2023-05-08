@@ -14,19 +14,19 @@ const exit = () => {
   writeStream.end();
   process.stdout.write(farewell);
   process.exit();
-}
+};
 
 process.stdout.write(greeting);
 
 process.on('SIGINT', () => {
- exit();
+  exit();
 });
 
 process.stdin.setEncoding('utf-8');
 process.stdin.on('data', (data) => {
   const str = data.toString().trim();
   if (str.toUpperCase() === wordExit) {
-   exit();
+    exit();
   } else {
     writeStream.write(data);
   }

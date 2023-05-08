@@ -29,6 +29,6 @@ fs.readdir(pathName, (err, files) => {
         info.push(fileSize);
         process.stdout.write(info.join(' - ') + '\n');
       }
-    })
+    });
   }
 });
